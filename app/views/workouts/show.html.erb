@@ -7,3 +7,35 @@
 <%= @workout.mood %>
 
 <%= @workout.length %>
+
+<% @workout.exercises.each do |exercise| %>
+	<div>
+		<h4><%= exercise.name %></h4>
+		<p><%= exercise.sets %></p>
+		<p><%= exercise.sets %></p>
+	</div>
+<% end %>
+
+
+<%= form_for [@workout, @exercise] do |f| %>
+
+	<div class="form-group">
+		<%= f.label :name, "Name" %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :sets, "Sets" %>
+		<%= f.text_field :sets %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :reps, "Reps" %>
+		<%= f.text_field :reps %>
+	</div>
+
+	<div class="form-group">
+		<%= f.submit %>
+	</div>
+
+<% end %>

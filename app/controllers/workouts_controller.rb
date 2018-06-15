@@ -20,6 +20,7 @@ class WorkoutsController < ApplicationController
 	end
 
 	def show
+		@exercise = Exercise.new
 	end
 
 	def edit
