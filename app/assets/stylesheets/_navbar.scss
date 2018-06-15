@@ -1,0 +1,16 @@
+nav.navbar{
+	.container{
+		.navbar-brand:hover{
+			color: #efe0c6;
+		}
+		.collapse{
+			.navbar-nav{
+				.nav-item{
+					.nav-link:hover{
+						color: #efe0c6;
+					}
+				}
+			}
+		}
+	}
+}
