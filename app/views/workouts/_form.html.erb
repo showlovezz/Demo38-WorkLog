@@ -1,0 +1,17 @@
+<%= form_for @workout do |f| %>
+
+	<%= f.label :date, "Date" %>
+	<%= f.text_field :date %>
+
+	<%= f.label :workout, "Workout" %>
+	<%= f.text_field :workout %>
+
+	<%= f.label :mood, "Mood" %>
+	<%= f.text_field :mood %>
+
+	<%= f.label :length, "Length" %>
+	<%= f.text_field :length %>
+
+	<%= f.submit %>
+
+<% end %>
