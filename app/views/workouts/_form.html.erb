@@ -1,16 +1,24 @@
 <%= form_for @workout do |f| %>
 
-	<%= f.label :date, "Date" %>
-	<%= f.text_field :date %>
+	<div class="form-group">
+		<%= f.label :date, "Date" %>
+		<%= f.datetime_select :date, prompt: { day: 'Select day', month: 'Select month', year: 'Select year', hour: 'Select hour', minute: 'Select minute' } %>
+	</div>
 
-	<%= f.label :workout, "Workout" %>
-	<%= f.text_field :workout %>
+	<div class="form-group">
+		<%= f.label :workout, "What area did you workout?" %>
+		<%= f.text_field :workout %>
+	</div>
 
-	<%= f.label :mood, "Mood" %>
-	<%= f.text_field :mood %>
+	<div class="form-group">
+		<%= f.label :mood, "How are you feeling?" %>
+		<%= f.text_field :mood %>
+	</div>
 
-	<%= f.label :length, "Length" %>
-	<%= f.text_field :length %>
+	<div class="form-group">
+		<%= f.label :length, "How long was the workout?" %>
+		<%= f.text_field :length %>
+	</div>
 
 	<%= f.submit %>
 
