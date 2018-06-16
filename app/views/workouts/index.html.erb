@@ -2,7 +2,7 @@
 <% @workouts.each do |workout| %>
 	<ul>
 		<li>
-			<%= workout.date %>
+			<%= workout.date.strftime("%A %B %d") %>
 			<%= workout.workout %>
 			<%= workout.mood %>
 			<%= workout.length %>
