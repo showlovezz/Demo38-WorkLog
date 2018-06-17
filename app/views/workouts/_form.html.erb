@@ -1,25 +1,31 @@
-<%= form_for @workout do |f| %>
+<section id="section_workout_form">
+	<div class="container">
+		<div class="row">
+			<div class="col-8 offset-2">
+				
+				<%= form_for @workout do |f| %>
+					<div class="form-group">
+						<%= f.label :date, "Date" %>
+						<%= f.datetime_select :date, prompt: { day: 'Select day', month: 'Select month', year: 'Select year', hour: 'Select hour', minute: 'Select minute' } %>
+					</div>
+					<div class="form-group">
+						<%= f.label :workout, "What area did you workout?" %>
+						<%= f.text_field :workout, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :mood, "How are you feeling?" %>
+						<%= f.text_field :mood, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :length, "How long was the workout?" %>
+						<%= f.text_field :length, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.submit class: "btn btn-success" %>
+					</div>
+				<% end %>
 
-	<div class="form-group">
-		<%= f.label :date, "Date" %>
-		<%= f.datetime_select :date, prompt: { day: 'Select day', month: 'Select month', year: 'Select year', hour: 'Select hour', minute: 'Select minute' } %>
+			</div>
+		</div>
 	</div>
-
-	<div class="form-group">
-		<%= f.label :workout, "What area did you workout?" %>
-		<%= f.text_field :workout %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :mood, "How are you feeling?" %>
-		<%= f.text_field :mood %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :length, "How long was the workout?" %>
-		<%= f.text_field :length %>
-	</div>
-
-	<%= f.submit %>
-
-<% end %>
+</section>
