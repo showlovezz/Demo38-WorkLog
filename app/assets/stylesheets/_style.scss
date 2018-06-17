@@ -7,3 +7,18 @@ body{
   background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+#section_index_workout{
+	.container{
+		.row{
+			.col-8{
+				.card-deck{
+					color: #000;
+				}
+				.card-deck:hover{
+					color: #efe0c6;
+				}
+			}
+		}
+	}
+}
