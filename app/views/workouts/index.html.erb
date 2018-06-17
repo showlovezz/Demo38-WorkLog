@@ -1,14 +1,23 @@
-<h1>Index Page</h1>
-<% @workouts.each do |workout| %>
-	<ul>
-		<li>
-			<%= workout.date.strftime("%A %B %d") %>
-			<%= workout.workout %>
-			<%= workout.mood %>
-			<%= workout.length %>
-			<%= link_to "Show", workout_path(workout) %>
-			<%= link_to "Edit", edit_workout_path(workout) %>
-			<%= link_to "Delete", workout_path(workout), method: :delete, data: {confirm: "Are you sure?"} %>
-		</li>
-	</ul>
-<% end %>
+<section id="section_index_workout">
+	<div class="container">
+		<div class="row">
+			<div class="col-8 offset-2">
+				
+				<% @workouts.each do |workout| %>
+					<%= link_to workout_path(workout), style: "text-decoration: none;" do %>
+						<div class="card-deck">
+						  <div class="card border-dark mb-4">
+						  	<div class="card-header">Workout Log</div>
+						    <div class="card-body">
+						      <h5 class="card-title"><%= workout.date.strftime("%A %B %d") %></h5>
+						      <p class="card-text"><%= workout.workout %></p>
+						    </div>
+						  </div>
+						</div>
+					<% end %>
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</section>
