@@ -1,41 +1,59 @@
-<h2>Show page</h2>
+<section id="section_workout_show">
+	<div class="container">
+		<div class="row">
+			<div class="col-8 offset-2">
+				
+				<div class="card-deck">
+				  <div class="card border-dark mb-3">
+				  	<div class="card-header text-dark"><%= @workout.date %></div>
+				    <div class="card-body">
+				      <h5 class="card-title"><%= @workout.workout %></h5>
+				      <p class="card-text">
+				      	Feeling：<span><%= @workout.mood %></span><br>
+				      	How long：<span><%= @workout.length %></span>
+				      </p>
+				    </div>
+				  </div>
+				</div>
 
-<%= @workout.date %>
+				<ul class="list-group">
+					<% @workout.exercises.each do |exercise| %>
+					  <li class="list-group-item list-group-item-info list-group-item-action">
+					    <div class="d-flex w-100 justify-content-between">
+					      <h5 class="mb-1"><%= exercise.name %></h5>
+					    </div>
+					    <p class="mb-1">Sets：<%= exercise.sets %></p>
+					    <p class="mb-1">Reps：<%= exercise.reps %></p>
+					  </li>
+				  <% end %>
+				</ul>
 
-<%= @workout.workout %>
+				<div class="exercise mt-3 mb-3">
+					<%= form_for [@workout, @exercise] do |f| %>
 
-<%= @workout.mood %>
+						<div class="form-group">
+							<%= f.label :name, "Name" %>
+							<%= f.text_field :name, class: "form-control" %>
+						</div>
 
-<%= @workout.length %>
+						<div class="form-group">
+							<%= f.label :sets, "Sets" %>
+							<%= f.text_field :sets, class: "form-control" %>
+						</div>
 
-<% @workout.exercises.each do |exercise| %>
-	<div>
-		<h4><%= exercise.name %></h4>
-		<p><%= exercise.sets %></p>
-		<p><%= exercise.sets %></p>
+						<div class="form-group">
+							<%= f.label :reps, "Reps" %>
+							<%= f.text_field :reps, class: "form-control" %>
+						</div>
+
+						<div class="form-group">
+							<%= f.submit class: "btn btn-success" %>
+						</div>
+
+					<% end %>
+				</div>
+
+			</div>
+		</div>
 	</div>
-<% end %>
-
-
-<%= form_for [@workout, @exercise] do |f| %>
-
-	<div class="form-group">
-		<%= f.label :name, "Name" %>
-		<%= f.text_field :name %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :sets, "Sets" %>
-		<%= f.text_field :sets %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :reps, "Reps" %>
-		<%= f.text_field :reps %>
-	</div>
-
-	<div class="form-group">
-		<%= f.submit %>
-	</div>
-
-<% end %>
+</section>
